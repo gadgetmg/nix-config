@@ -18,7 +18,7 @@
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
       fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" "noatime" ];
+      options = [ "subvol=@" "compress=zstd" "noatime" ];
     };
 
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/ef9848a6-0bce-45e8-9b0b-43222586c89c";
@@ -27,21 +27,21 @@
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
       fsType = "btrfs";
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var/log" =
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
       fsType = "btrfs";
-      options = [ "subvol=log" "compress=zstd" "noatime" ];
+      options = [ "subvol=@log" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/persist" =
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
       fsType = "btrfs";
-      options = [ "subvol=persist" "compress=zstd" "noatime" ];
+      options = [ "subvol=@persist" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
 
@@ -56,7 +56,7 @@
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
       fsType = "btrfs";
-      options = [ "subvol=swap" ];
+      options = [ "subvol=@swap" ];
     };
 
   swapDevices =
