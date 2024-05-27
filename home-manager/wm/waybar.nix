@@ -52,9 +52,18 @@ rec {
         cpu = {
           interval = 2;
           format = "${material_icon "󰘚"}{usage:3}%";
+          states = {
+            warning = 80;
+            critical = 90;
+          };
         };
         memory = {
+          interval = 2;
           format = "${material_icon "󰍛"}{percentage:3}%";
+          states = {
+            warning = 70;
+            critical = 80;
+          };
         };
         gamemode = {
           use-icon = false;
@@ -291,7 +300,17 @@ rec {
         color: #${base0E};
         font-weight: bold;
       }
-      /* Alerts */
+      /* Warnings */
+      #cpu.warning,
+      #memory.warning {
+        border-color: #${base09};
+        background-color: mix(#${base00}, #${base09}, 0.2);
+        color: #${base05};
+        font-weight: bold;
+      }
+      /* Critical alerts */
+      #cpu.critical,
+      #memory.critical,
       #mode,
       #submap,
       #pulseaudio.sink.sink-muted,
@@ -301,6 +320,7 @@ rec {
         color: #${base05};
         font-weight: bold;
       }
+      /* Urgent workspaces */
       #workspaces button.urgent:not(.focused) label {
         color: #${base08};
         font-weight: bold;
