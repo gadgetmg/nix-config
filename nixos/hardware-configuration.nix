@@ -37,12 +37,6 @@
       options = [ "subvol=log" "compress=zstd" "noatime" ];
     };
 
-  # fileSystems."/home" =
-  #   { device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
-  #     fsType = "btrfs";
-  #     options = [ "subvol=home" "compress=zstd" "noatime" ];
-  #   };
-
   fileSystems."/persist" =
     {
       device = "/dev/disk/by-uuid/ebd9b86a-b2f5-4e98-bae7-89c1a4a07ff7";
