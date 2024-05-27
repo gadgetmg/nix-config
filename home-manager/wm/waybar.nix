@@ -164,7 +164,7 @@ rec {
           disable-scroll = true;
           disable-markup = true;
           format = "[{index}:{name}]";
-          persistent_workspaces = {
+          persistent-workspaces = {
             "1:main" = [ "DP-1" ];
             "2:www" = [ "DP-1" ];
             "3:chat" = [ "DP-2" ];
