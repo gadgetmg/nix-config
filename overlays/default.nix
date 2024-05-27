@@ -1,5 +1,5 @@
 # This file defines overlays
-{inputs, ...}: {
+{ inputs, ... }: {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
@@ -19,5 +19,10 @@
       system = final.system;
       config.allowUnfree = true;
     };
+
+    # Override specific packages on 'pkgs.' here:
+    signal-desktop = final.unstable.signal-desktop;
   };
+
+  nur = inputs.nur.overlay; # Enable access to NUR
 }

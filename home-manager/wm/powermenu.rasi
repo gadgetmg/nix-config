@@ -1,0 +1,90 @@
+configuration {
+    show-icons:                 false;
+    powermenu {
+        display-name:           "Power";
+    }
+}
+@import                          "colors.rasi"
+
+/* Main Window */
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       800px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    cursor:                      "default";
+    background-color:            @base00;
+}
+
+/* Main Box */
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/* Listview */
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    text-color:                  @base05;
+    cursor:                      "default";
+}
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     40px 10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            @base01;
+    text-color:                  @base05;
+    cursor:                      pointer;
+}
+element-text {
+    font:                        "monospace 32";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            @base0D;
+    text-color:                  @base00;
+}
