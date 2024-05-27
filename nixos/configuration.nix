@@ -73,6 +73,25 @@
     "iptable_mangle"
   ];
 
+  boot.kernel.sysctl = {
+    # Optimizations for zram (https://wiki.archlinux.org/title/Zram)
+    "vm.swappiness" = 180;
+    "vm.watermark_boost_factor" = 0;
+    "vm.watermark_scale_factor" = 125;
+    "vm.page-cluster" = 0;
+  };
+
+  # Configure zram
+  services.zram-generator = {
+    enable = true;
+    settings = {
+      zram0 = {
+        zram-size = "ram / 2";
+        compression-algorithm = "zstd";
+      };
+    };
+  };
+
   # Xbox gamepad support
   hardware.xone.enable = true;
   hardware.xpadneo.enable = true;
@@ -167,6 +186,8 @@
   services.xserver.enable = true;
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sddm.theme = "breeze";
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # Enable CUPS to print documents.
