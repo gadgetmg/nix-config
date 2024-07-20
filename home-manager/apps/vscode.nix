@@ -35,6 +35,8 @@
           };
         };
       };
+      "redhat.telemetry.enabled" = false;
+      "yaml.format.enable" = false;
       "sops.creationEnabled" = true;
       "terminal.integrated.copyOnSelection" = true;
       "window.titleBarStyle" = "custom";
@@ -1514,6 +1516,7 @@
 
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
+      redhat.vscode-yaml
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "rasi";
