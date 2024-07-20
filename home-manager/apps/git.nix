@@ -10,6 +10,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       gpg.format = "ssh";
+      push.autoSetupRemote = true;
     };
   };
 }
