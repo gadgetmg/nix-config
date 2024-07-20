@@ -1,0 +1,230 @@
+configuration {
+	modi:                       "drun,run,filebrowser";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+}
+@import                          "colors.rasi"
+
+/* Main Window */
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    cursor:                      "default";
+    background-color:            @base00;
+}
+
+/* Main Box */
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+/* Inputbar */
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px 0px 1px 0px;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            @base01;
+    text-color:                  @base05;
+    children:                    [ "prompt", "entry" ];
+}
+prompt {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+}
+
+/* Listview */
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    text-color:                  @base05;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @base0D;
+    border-radius:               0px;
+    background-color:            @base01;
+}
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    text-color:                  @base05;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @base00;
+    text-color:                  @base05;
+}
+element normal.urgent {
+    background-color:            @base08;
+    text-color:                  @base00;
+}
+element normal.active {
+    background-color:            @base0B;
+    text-color:                  @base00;
+}
+element selected.normal {
+    background-color:            @base0D;
+    text-color:                  @base00;
+}
+element selected.urgent {
+    background-color:            @base0B;
+    text-color:                  @base00;
+}
+element selected.active {
+    background-color:            @base08;
+    text-color:                  @base00;
+}
+element alternate.normal {
+    background-color:            @base00;
+    text-color:                  @base05;
+}
+element alternate.urgent {
+    background-color:            @base08;
+    text-color:                  @base00;
+}
+element alternate.active {
+    background-color:            @base0B;
+    text-color:                  @base00;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/* Mode Switcher */
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    text-color:                  @base05;
+}
+button {
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            @base01;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+button selected {
+    background-color:            @base0D;
+    text-color:                  @base00;
+}
+
+/* Message */
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @base0D;
+    background-color:            transparent;
+    text-color:                  @base05;
+}
+textbox {
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            @base01;
+    text-color:                  @base05;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+    placeholder-color:           @base05;
+    blink:                       true;
+    markup:                      true;
+}
+error-message {
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @base0D;
+    background-color:            @base00;
+    text-color:                  @base05;
+}

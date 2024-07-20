@@ -1,0 +1,211 @@
+/* Reset theme styles */
+* {
+  all: initial;
+  border: none;
+  border-radius: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  box-shadow: none;
+}
+
+/* Bar */
+window#waybar {
+  background-color: transparent;
+}
+
+window>box {
+  padding: 6px 4px;
+  background-color: @base00;
+  color: @base04;
+}
+
+/* Hover tooltips */
+tooltip {
+  background-color: @base00;
+  padding: 4px;
+}
+
+tooltip label {
+  color: @base04;
+  font-family: sans-serif;
+}
+
+/* Tray pop-up menus */
+#tray menu {
+  background-color: @base00;
+}
+
+#tray menuitem>label {
+  color: @base04;
+  font-family: sans-serif;
+}
+
+#tray menuitem:hover {
+  background-color: @base03;
+}
+
+#tray menu separator {
+  background-color: @base03;
+  padding-top: 1px;
+}
+
+.DP-1 #tray menu {
+  padding: 4px;
+}
+
+.DP-1 #tray menuitem {
+  padding: 2px 4px;
+}
+
+.DP-1 #tray separator {
+  margin: 2px 0px;
+}
+
+.DP-2 #tray menu {
+  padding: 3px;
+}
+
+.DP-2 #tray menuitem {
+  padding: 1px 3px;
+}
+
+.DP-2 #tray separator {
+  margin: 1px 0px;
+}
+
+/* Per-output font size */
+.DP-1 * {
+  font-size: 12.5px;
+}
+
+.DP-2 * {
+  font-size: 10.5px;
+}
+
+.DP-1 #window {
+  font-size: 13.5px;
+  padding-top: 1px;
+}
+
+.DP-2 #window {
+  font-size: 11.5px;
+  padding-top: 1px;
+}
+
+/* Default module style */
+#workspaces,
+#mode,
+#submap,
+#cpu,
+#memory,
+#mpd,
+#window,
+#custom-weather,
+#gamemode>label,
+#idle_inhibitor,
+#tray,
+#network,
+#pulseaudio,
+#clock {
+  border-radius: 4px;
+  padding: 0px 8px;
+  margin: 0px 2px;
+  color: @base04;
+  background-color: @base01;
+  border: 1px solid @base01;
+}
+
+#window {
+  border-color: @base00;
+  background-color: @base00;
+  font-weight: bold;
+}
+
+/* Left workspace buttons */
+#workspaces {
+  padding: 0px 4px;
+}
+
+#workspaces button label {
+  padding: 0px 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: @base03;
+}
+
+#workspaces button.visible label {
+  color: @base04;
+}
+
+/* Hover effects */
+#workspaces button:hover label {
+  background-image: linear-gradient(@base03, @base03);
+  background-size: 65% 2px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+/* Music */
+#mpd {
+  color: @base03;
+}
+
+#mpd.playing {
+  border-color: @base0E;
+  background-color: mix(@base00, @base0E, 0.15);
+  color: @base0E;
+  font-weight: bold;
+}
+
+/* Warnings */
+#cpu.warning,
+#memory.warning {
+  border-color: @base09;
+  background-color: mix(@base00, @base09, 0.2);
+  color: @base05;
+  font-weight: bold;
+}
+
+/* Critical alerts */
+#cpu.critical,
+#memory.critical,
+#mode,
+#submap,
+#pulseaudio.sink.sink-muted,
+#pulseaudio.source.source-muted {
+  border-color: @base08;
+  background-color: mix(@base00, @base08, 0.5);
+  color: @base05;
+  font-weight: bold;
+}
+
+/* Urgent workspaces */
+#workspaces button.urgent:not(.focused) label {
+  color: @base08;
+  font-weight: bold;
+}
+
+/* Gamemode */
+#gamemode.running>label {
+  border-color: @base0E;
+  background-color: mix(@base00, @base0E, 0.70);
+  color: @base05;
+}
+
+/* Idle inhibitor */
+#idle_inhibitor.activated {
+  border-color: @base0F;
+  background-color: mix(@base00, @base0F, 0.5);
+  color: @base05;
+}
+
+/* Time accent */
+#clock.time {
+  border-color: @base0D;
+  color: @base0D;
+  background-color: mix(@base00, @base0D, 0.15);
+  font-weight: bold;
+}
