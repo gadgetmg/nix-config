@@ -25,6 +25,7 @@
       ".config/Code"
       ".config/libfm"
       ".config/libreoffice"
+      ".config/nvim"
       ".config/pcmanfm"
       ".config/Signal"
       ".config/sops"
