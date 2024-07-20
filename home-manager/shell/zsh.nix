@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 let
   inherit (config) colorScheme;
@@ -7,7 +7,7 @@ in
 {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableVteIntegration = true;
     autocd = true;

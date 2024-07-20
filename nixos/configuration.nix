@@ -97,7 +97,10 @@
   hardware.xpadneo.enable = true;
 
   # AMD GPU
-  hardware.amdgpu.amdvlk = true;
+  hardware.amdgpu.amdvlk = {
+    enable = true;
+    support32Bit.enable = true;
+  };
   hardware.opengl.enable = true;
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.extraPackages = with pkgs; [
@@ -185,9 +188,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.sddm.theme = "breeze";
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.theme = "breeze";
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   # Enable CUPS to print documents.

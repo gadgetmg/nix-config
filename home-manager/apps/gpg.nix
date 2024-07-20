@@ -1,10 +1,10 @@
-{ config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   programs.gpg.enable = true;
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryFlavor = "gtk2";
+    pinentryPackage = pkgs.pinentry-gtk2;
   };
 }

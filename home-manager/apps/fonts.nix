@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (iosevka-bin.override { variant = "curly"; })
+    (iosevka-bin.override { variant = "Curly"; })
     material-design-icons
     weather-icons
     (nerdfonts.override { fonts = [ "Iosevka" ]; })
